@@ -21,7 +21,7 @@ class Controller extends BaseController
      */
     public function index(Request $request)
     {
-        $client = Client::factory('http://localhost/weather_history/public/rpc');
+        $client = Client::factory(env('JRPC_CONNECT'));
         
         $tempByDate = false;
         $validated = $request->validate([
